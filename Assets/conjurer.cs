@@ -40,11 +40,13 @@ public class conjurer : enemydamage
            }
             else
             {
-                //anim.SetBool("isRunning", false);
+                anim.SetBool("isRunning", false);
                 if(Time.time >= conjuringTime)
                 {
                     conjuringTime = Time.time + timeBetweenConjuring;
-                    anim.SetTrigger("isConjuring");
+                    //anim.SetTrigger("isConjuring");
+                    Summon();
+
                 }
             }
        }

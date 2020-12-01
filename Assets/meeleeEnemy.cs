@@ -17,11 +17,11 @@ public class meeleeEnemy : enemydamage
     // Update is called once per frame
     void Update()
     {
-        if (player.position != null)
+        if (base.player.position != null)
         {
-            if (Vector2.Distance(transform.position, player.position) > stopdistance)
+            if (Vector2.Distance(transform.position, base.player.position) > stopdistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, base.player.position, speed * Time.deltaTime);
             }
             else
             {
@@ -36,9 +36,9 @@ public class meeleeEnemy : enemydamage
     }
     IEnumerator attack()
     {
-        player.GetComponent<movement>().takeDamage(damage);
+        base.player.GetComponent<movement>().takeDamage(damage);
         Vector2 originalPosition = transform.position;
-        Vector2 attackPosition = player.position;
+        Vector2 attackPosition = base.player.position;
         float percent = 0;
         while (percent <= 1)
         {
@@ -49,3 +49,4 @@ public class meeleeEnemy : enemydamage
         }
     }
 }
+

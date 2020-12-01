@@ -7,11 +7,12 @@ public class enemydamage : MonoBehaviour
     public float timeBetweenAttack;
     public int health;
     public int damage;
-    //[HideInInspector]
+    [HideInInspector]
     public Transform player;
+    
     public virtual void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
